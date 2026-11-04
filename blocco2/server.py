@@ -6,6 +6,7 @@ import urllib.request
 from collections import deque
 from datetime import date
 from pathlib import Path
+from typing import Literal
 
 import anthropic
 from anthropic import Anthropic
@@ -59,7 +60,14 @@ app.add_middleware(
 DURATA_CACHE_LISTINO = 60  # secondi: dopo una modifica del titolare la chat si aggiorna entro un minuto
 LIMITE_RICHIESTE = 30      # messaggi per indirizzo IP...
 FINESTRA_SECONDI = 600     # ...ogni 10 minuti (solo in modalità sito)
-MAX_SESSIONI = 500         # oltre, si dimentica la sessione più vecchia
+MAX_SESSIONI = 500         # oltre, si dimentica la sessione più vecchia (solo modalità locale)
+
+# Modalità sito: il server non ricorda nulla tra una richiesta e l'altra (su Vercel ogni
+# richiesta può cadere su un'istanza diversa). Storia e riassunto stanno nel browser del
+# cliente: li manda a ogni messaggio e il server li restituisce aggiornati.
+MAX_STORIA_CLIENT = 14
+MAX_CARATTERI_MESSAGGIO = 4000
+MAX_CARATTERI_RIASSUNTO = 4000
 
 REGOLE_SITO = (
     "\n\n<regole_sito>\n"
@@ -184,15 +192,23 @@ PROMPT_RIASSUNTO = (
     "senza perdere nessun dato già presente."
 )
 
-STORIE = {}      # session_id -> lista di messaggi interi
-RIASSUNTI = {}   # session_id -> riassunto dei messaggi più vecchi
+STORIE = {}      # session_id -> lista di messaggi interi (solo modalità locale)
+RIASSUNTI = {}   # session_id -> riassunto dei messaggi più vecchi (solo modalità locale)
 LOCK_SESSIONI = {}  # session_id -> lock: una richiesta alla volta per sessione
 _richieste_ip = {}  # indirizzo IP -> istanti delle ultime richieste
+
+
+class MessaggioStoria(BaseModel):
+    role: Literal["user", "assistant"]
+    content: str = Field(max_length=MAX_CARATTERI_MESSAGGIO)
 
 
 class Richiesta(BaseModel):
     session_id: str = Field(min_length=8, max_length=64)
     messaggio: str = Field(min_length=1, max_length=1000)
+    # solo modalità sito: lo stato della conversazione, come l'ultima risposta l'ha restituito
+    storia: list[MessaggioStoria] = Field(default_factory=list, max_length=MAX_STORIA_CLIENT)
+    riassunto: str = Field(default="", max_length=MAX_CARATTERI_RIASSUNTO)
 
 
 def estrai_testo(r):
@@ -200,9 +216,8 @@ def estrai_testo(r):
     return "".join(b.text for b in r.content if b.type == "text")
 
 
-def system_con_riassunto(session_id):
+def system_con_riassunto(riassunto):
     base = carica_system()
-    riassunto = RIASSUNTI.get(session_id)
     if not riassunto:
         return base
     return (
@@ -213,26 +228,23 @@ def system_con_riassunto(session_id):
     )
 
 
-def comprimi(session_id):
-    """Riassume i messaggi vecchi e lascia in storia solo gli ultimi."""
-    storia = STORIE[session_id]
-
+def comprimi(storia, riassunto):
+    """Riassume i messaggi vecchi. Restituisce (storia con solo gli ultimi, nuovo riassunto)."""
     # la finestra tenuta deve iniziare con un messaggio user (altrimenti errore 400)
     inizio = len(storia) - TIENI_ULTIMI
     while inizio > 0 and storia[inizio]["role"] != "user":
         inizio -= 1
     if inizio <= 0:
-        return
+        return storia, riassunto
 
     vecchi = storia[:inizio]
     trascrizione = "\n".join(
         f"{'Cliente' if m['role'] == 'user' else 'Assistente'}: {m['content']}"
         for m in vecchi
     )
-    precedente = RIASSUNTI.get(session_id)
     contenuto = ""
-    if precedente:
-        contenuto += f"Riassunto precedente:\n{precedente}\n\n"
+    if riassunto:
+        contenuto += f"Riassunto precedente:\n{riassunto}\n\n"
     contenuto += f"Nuovi messaggi da integrare:\n{trascrizione}"
 
     r = client.messages.create(
@@ -241,13 +253,41 @@ def comprimi(session_id):
         system=PROMPT_RIASSUNTO,
         messages=[{"role": "user", "content": contenuto}],
     )
-    RIASSUNTI[session_id] = estrai_testo(r)
-    STORIE[session_id] = storia[inizio:]
+    nuovo = estrai_testo(r) or riassunto  # se il riassunto viene vuoto si tiene il vecchio
     print(
-        f"[riassunto] sessione {session_id[:8]} | input: {r.usage.input_tokens} | "
-        f"output: {r.usage.output_tokens} | messaggi {len(storia)} -> "
-        f"{len(STORIE[session_id])}"
+        f"[riassunto] input: {r.usage.input_tokens} | output: {r.usage.output_tokens} | "
+        f"messaggi {len(storia)} -> {len(storia) - inizio}"
     )
+    return storia[inizio:], nuovo
+
+
+def rispondi(storia, riassunto, domanda):
+    """Un turno di conversazione, senza toccare lo stato ricevuto.
+
+    Restituisce (testo, nuova storia, nuovo riassunto); testo è "" se il modello non ha
+    risposto. Le eccezioni (listino, modello) escono senza aver cambiato nulla.
+    """
+    nuova = [*storia, {"role": "user", "content": domanda}]
+    if len(nuova) > MAX_MESSAGGI:
+        nuova, riassunto = comprimi(nuova, riassunto)
+
+    r = client.messages.create(
+        model=MODEL,
+        max_tokens=MAX_TOKENS,
+        system=system_con_riassunto(riassunto),
+        messages=nuova,
+    )
+    testo = estrai_testo(r)
+    if not testo:
+        # risposta vuota (es. limite di token raggiunto durante il thinking)
+        return "", storia, riassunto
+
+    nuova.append({"role": "assistant", "content": testo})
+    print(
+        f"[chat] input: {r.usage.input_tokens} | output: {r.usage.output_tokens} | "
+        f"messaggi in storia: {len(nuova)}"
+    )
+    return testo, nuova, riassunto
 
 
 def indirizzo_client(request: Request):
@@ -258,7 +298,10 @@ def indirizzo_client(request: Request):
 
 
 def controlla_limite(ip):
-    """Al massimo LIMITE_RICHIESTE messaggi ogni FINESTRA_SECONDI per indirizzo IP."""
+    """Al massimo LIMITE_RICHIESTE messaggi ogni FINESTRA_SECONDI per indirizzo IP.
+
+    La memoria è quella dell'istanza: su un servizio serverless è un freno, non una garanzia.
+    """
     ora = time.monotonic()
     if len(_richieste_ip) > 2000:  # ripulisce chi non scrive più da un po'
         for k in [k for k, v in _richieste_ip.items() if not v or ora - v[-1] > FINESTRA_SECONDI]:
@@ -274,10 +317,29 @@ def controlla_limite(ip):
     coda.append(ora)
 
 
-def annulla_ultimo_messaggio(storia):
-    # se qualcosa va storto si toglie la domanda dalla storia, così il cliente può riprovare
-    if storia and storia[-1]["role"] == "user":
-        storia.pop()
+def storia_valida(storia):
+    """La storia arrivata dal browser deve alternare user/assistant e finire con assistant."""
+    ruoli = [m["role"] for m in storia]
+    atteso = ["user", "assistant"] * (len(ruoli) // 2)
+    return ruoli == atteso
+
+
+def chiama_modello(storia, riassunto, domanda):
+    """rispondi() con gli errori convertiti in risposte HTTP per il cliente."""
+    try:
+        return rispondi(storia, riassunto, domanda)
+    except ListinoNonDisponibile as e:
+        print(f"[errore] listino non disponibile: {e}")
+        raise HTTPException(
+            status_code=503,
+            detail="Il listino non è disponibile in questo momento.",
+        )
+    except anthropic.APIError as e:
+        print(f"[errore] chiamata al modello fallita: {e!r}")
+        raise HTTPException(
+            status_code=502,
+            detail="L'assistente non è raggiungibile in questo momento.",
+        )
 
 
 @app.get("/salute")
@@ -294,9 +356,20 @@ def chat(req: Richiesta, request: Request):
     if not domanda:
         raise HTTPException(status_code=400, detail="Scrivi un messaggio.")
 
+    if MODALITA_SITO:
+        # senza stato: la conversazione arriva dal browser e torna aggiornata
+        storia = [m.model_dump() for m in req.storia]
+        if not storia_valida(storia):
+            raise HTTPException(status_code=400, detail="Conversazione non valida.")
+        testo, nuova, riassunto = chiama_modello(storia, req.riassunto, domanda)
+        if not testo:
+            testo = "Non sono riuscito a rispondere, riprova."
+            return {"risposta": testo, "storia": storia, "riassunto": req.riassunto}
+        return {"risposta": testo, "storia": nuova, "riassunto": riassunto}
+
+    # modalità locale (esercizio del blocco 2): la memoria sta nel server, per sessione
     sid = req.session_id
     with LOCK_SESSIONI.setdefault(sid, threading.Lock()):
-        # TODO 1: storia di questa sessione (creata vuota se non esiste)
         if sid not in STORIE and len(STORIE) >= MAX_SESSIONI:
             vecchia = next(iter(STORIE))
             STORIE.pop(vecchia, None)
@@ -304,47 +377,11 @@ def chat(req: Richiesta, request: Request):
             LOCK_SESSIONI.pop(vecchia, None)
         storia = STORIE.setdefault(sid, [])
 
-        # TODO 2: messaggio dell'utente
-        storia.append({"role": "user", "content": domanda})
-
-        try:
-            # TODO 3: se la storia è troppo lunga, riassumi i messaggi più vecchi
-            if len(storia) > MAX_MESSAGGI:
-                comprimi(sid)
-                storia = STORIE[sid]
-
-            # TODO 4: chiamata al modello, risposta in storia, token a terminale
-            r = client.messages.create(
-                model=MODEL,
-                max_tokens=MAX_TOKENS,
-                system=system_con_riassunto(sid),
-                messages=storia,
-            )
-        except ListinoNonDisponibile as e:
-            annulla_ultimo_messaggio(storia)
-            print(f"[errore] listino non disponibile: {e}")
-            raise HTTPException(
-                status_code=503,
-                detail="Il listino non è disponibile in questo momento.",
-            )
-        except anthropic.APIError as e:
-            annulla_ultimo_messaggio(storia)
-            print(f"[errore] chiamata al modello fallita: {e!r}")
-            raise HTTPException(
-                status_code=502,
-                detail="L'assistente non è raggiungibile in questo momento.",
-            )
-
-        testo = estrai_testo(r)
+        testo, nuova, riassunto = chiama_modello(storia, RIASSUNTI.get(sid, ""), domanda)
         if not testo:
-            # risposta vuota (es. limite di token raggiunto durante il thinking):
-            # tolgo l'ultimo messaggio user per non rompere l'alternanza dei ruoli
-            storia.pop()
             return {"risposta": "Non sono riuscito a rispondere, riprova."}
 
-        storia.append({"role": "assistant", "content": testo})
-        print(
-            f"[chat] sessione {sid[:8]} | input: {r.usage.input_tokens} | "
-            f"output: {r.usage.output_tokens} | messaggi in storia: {len(storia)}"
-        )
+        STORIE[sid] = nuova
+        if riassunto:
+            RIASSUNTI[sid] = riassunto
         return {"risposta": testo}
