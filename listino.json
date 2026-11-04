@@ -1,0 +1,25 @@
+{
+  "legni": {
+    "Abete": 85,
+    "Pino": 95,
+    "Castagno": 160,
+    "Rovere": 180,
+    "Noce": 240
+  },
+  "finiture": {
+    "Grezzo": 0,
+    "Cera naturale": 12,
+    "Verniciato opaco": 18,
+    "Laccato": 35
+  },
+  "consegne": {
+    "Ritiro in sede": 0,
+    "Entro 50 km": 60,
+    "Oltre 50 km": 120
+  },
+  "parametri": {
+    "iva": 0.22,
+    "misura_min_cm": 30,
+    "misura_max_cm": 300
+  }
+}

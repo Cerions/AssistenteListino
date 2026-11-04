@@ -1,0 +1,83 @@
+{
+  "casi": [
+    {
+      "id": "C1",
+      "cliente": "Rossi",
+      "larghezza": 120,
+      "altezza": 80,
+      "profondita": 40,
+      "legno": "Rovere",
+      "finitura": "Cera naturale",
+      "consegna": "Entro 50 km"
+    },
+    {
+      "id": "C2",
+      "cliente": "Bianchi",
+      "larghezza": 200,
+      "altezza": 100,
+      "profondita": 50,
+      "legno": "Abete",
+      "finitura": "Grezzo",
+      "consegna": "Ritiro in sede"
+    },
+    {
+      "id": "C3",
+      "cliente": "Verdi",
+      "larghezza": 90,
+      "altezza": 180,
+      "profondita": 35,
+      "legno": "Noce",
+      "finitura": "Laccato",
+      "consegna": "Oltre 50 km"
+    },
+    {
+      "id": "C4",
+      "cliente": "Neri",
+      "larghezza": 150,
+      "altezza": 75,
+      "profondita": 60,
+      "legno": "Castagno",
+      "finitura": "Verniciato opaco",
+      "consegna": "Entro 50 km"
+    },
+    {
+      "id": "C5",
+      "cliente": "Gallo",
+      "larghezza": 20,
+      "altezza": 80,
+      "profondita": 40,
+      "legno": "Pino",
+      "finitura": "Cera naturale",
+      "consegna": "Ritiro in sede"
+    }
+  ],
+  "atteso": {
+    "C1": {
+      "superficie_mq": 3.52,
+      "imponibile": 735.84,
+      "iva": 161.88,
+      "totale": 897.72
+    },
+    "C2": {
+      "superficie_mq": 7.0,
+      "imponibile": 595.0,
+      "iva": 130.9,
+      "totale": 725.9
+    },
+    "C3": {
+      "superficie_mq": 5.13,
+      "imponibile": 1530.75,
+      "iva": 336.76,
+      "totale": 1867.51
+    },
+    "C4": {
+      "superficie_mq": 4.95,
+      "imponibile": 941.1,
+      "iva": 207.04,
+      "totale": 1148.14
+    },
+    "C5": {
+      "errore": "La larghezza deve essere tra 30 e 300 cm."
+    }
+  }
+}
