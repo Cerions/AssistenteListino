@@ -46,7 +46,7 @@ def main():
             for prova in range(1, PROVE + 1):
                 r = client.messages.create(
                     model=modello,
-                    max_tokens=500,
+                    max_tokens=2000,
                     system=system_prompt,
                     messages=[{"role": "user", "content": domanda}],
                 )
@@ -63,6 +63,7 @@ def main():
                     f"output: {r.usage.output_tokens} | "
                     f"costo stimato: ${costo:.6f}"
                 )
+                print(f"Stop reason: {r.stop_reason} | blocchi: {[b.type for b in r.content]}")
 
 
 if __name__ == "__main__":
