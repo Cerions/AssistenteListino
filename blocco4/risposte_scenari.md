@@ -4,9 +4,9 @@
 
 Tool: cerca_prodotti, aggiungi_al_carrello
 
-Ho aggiunto al carrello la libreria a giorno (P004) in rovere con cera naturale, misure 120×180×30 cm, quantità 1. Prezzo unitario: 1.175,04 €, IVA e consegna escluse.
+Ho aggiunto al carrello la libreria a giorno (P004) in rovere con cera naturale, misure 120×180×30 cm, quantità 1. Prezzo: 1.175,04 € (IVA e consegna escluse).
 
-Vuoi aggiungere altro o passo al preventivo? Per il preventivo mi serve la consegna: Ritiro in sede, Entro 50 km oppure Oltre 50 km.
+Vuoi aggiungere altro o preparo il preventivo? Per il preventivo mi serve sapere la consegna: Ritiro in sede, Entro 50 km oppure Oltre 50 km.
 
 - [x] cerca_prodotti chiamato
 - [x] carrello: 1 riga
@@ -16,9 +16,9 @@ Vuoi aggiungere altro o passo al preventivo? Per il preventivo mi serve la conse
 
 Tool: cerca_prodotti, aggiungi_al_carrello
 
-Ho aggiunto al carrello due comodini (P013) in noce con olio naturale, misure 45×50×35 cm, quantità 2. Prezzo unitario: 278,75 €, IVA e consegna escluse.
+Ho aggiunto alla riga 2 due comodini (P013) in noce con olio naturale, misure 45×50×35 cm. Prezzo: 278,75 € ciascuno, IVA e consegna escluse.
 
-Vuoi aggiungere altro o passo al preventivo? Per il preventivo mi serve la consegna: Ritiro in sede, Entro 50 km oppure Oltre 50 km.
+Vuoi aggiungere altro o preparo il preventivo? Per il preventivo mi serve la consegna: Ritiro in sede, Entro 50 km oppure Oltre 50 km.
 
 - [x] carrello: 2 righe
 - [x] riga 2: P013 Noce Olio naturale q. 2
@@ -29,15 +29,15 @@ Tool: calcola_preventivo
 
 Ecco il preventivo con consegna entro 50 km:
 
-- Libreria a giorno: 1 × 1.175,04 € = 1.175,04 €
-- Comodino: 2 × 278,75 € = 557,50 €
+- Riga 1: Libreria a giorno, 1 × 1.175,04 € = 1.175,04 €
+- Riga 2: Comodino, 2 × 278,75 € = 557,50 €
 - Consegna (entro 50 km): 60,00 €
 
 Imponibile: 1.792,54 €
 IVA 22%: 394,36 €
 Totale: 2.186,90 €
 
-Vuoi aggiungere altro o modificare qualcosa?
+Vuoi modificare qualcosa nel carrello o procedere così?
 
 - [x] calcola_preventivo chiamato
 - [x] imponibile 1.792,54 €
@@ -48,32 +48,41 @@ Vuoi aggiungere altro o modificare qualcosa?
 
 Tool: mostra_carrello
 
-Nel carrello ci sono due righe:
+Nel carrello ci sono:
 
-- Riga 1: Libreria a giorno, 120×180×30 cm, rovere con cera naturale, quantità 1. Prezzo unitario: 1.175,04 €
-- Riga 2: Comodino, 45×50×35 cm, noce con olio naturale, quantità 2. Prezzo unitario: 278,75 €
+- Riga 1: Libreria a giorno, 120×180×30 cm, rovere con cera naturale, quantità 1, 1.175,04 € cad.
+- Riga 2: Comodino, 45×50×35 cm, noce con olio naturale, quantità 2, 278,75 € cad.
 
-I prezzi sono IVA e consegna escluse. Vuoi modificare qualcosa o procedo con il preventivo?
+Prezzi IVA e consegna esclusi. Vuoi modificare qualcosa o procedo con il preventivo?
 
 - [x] mostra_carrello chiamato
 
-## 5. «Togli i comodini» — da controllare
+## 5. «Togli i comodini» — passa
 
-Tool: mostra_carrello, rimuovi_dal_carrello
+Tool: mostra_carrello, rimuovi_dal_carrello, calcola_preventivo
 
-Ho tolto i due comodini dal carrello. Ora c'è solo la libreria a giorno (120×180×30 cm, rovere con cera naturale, 1.175,04 € IVA e consegna escluse).
+Ho tolto i comodini dal carrello. Resta solo la libreria a giorno.
 
-Vuoi che rifaccia il preventivo con consegna entro 50 km, oppure preferisci un'altra consegna (Ritiro in sede o Oltre 50 km)?
+Ecco il nuovo preventivo con consegna entro 50 km:
+
+- Riga 1: Libreria a giorno, 1 × 1.175,04 € = 1.175,04 €
+- Consegna (entro 50 km): 60,00 €
+
+Imponibile: 1.235,04 €
+IVA 22%: 271,71 €
+Totale: 1.506,75 €
+
+Vuoi aggiungere altro o procedo così?
 
 - [x] rimuovi_dal_carrello chiamato
 - [x] resta solo la libreria
-- [ ] nuovo totale 1.506,75 €
+- [x] nuovo totale 1.506,75 €
 
 ## 6. «Svuota il carrello» — passa
 
 Tool: nessuno
 
-Vuoi davvero svuotare il carrello? Nel carrello c'è ora solo la libreria a giorno (120×180×30 cm, rovere con cera naturale). Rispondi sì per confermare.
+Vuoi davvero svuotare il carrello? Verranno eliminate tutte le righe, cioè la libreria a giorno. Rispondi «sì» per confermare.
 
 - [x] svuota_carrello NON chiamato
 - [x] il carrello è ancora pieno
@@ -83,7 +92,7 @@ Vuoi davvero svuotare il carrello? Nel carrello c'è ora solo la libreria a gior
 
 Tool: svuota_carrello
 
-Il carrello è stato svuotato. Se vuoi, posso aiutarti a cercare un altro mobile o a preparare un nuovo preventivo.
+Il carrello è stato svuotato. Vuoi cercare qualcos'altro?
 
 - [x] svuota_carrello(confermato=true) riuscito
 - [x] carrello vuoto
@@ -92,9 +101,12 @@ Il carrello è stato svuotato. Se vuoi, posso aiutarti a cercare un altro mobile
 
 Tool: cerca_prodotti
 
-Al momento non abbiamo una mensola da 20 cm di larghezza. La nostra mensola disponibile è la Mensola scatolata (categoria Studio), che si realizza da 40 a 300 cm di larghezza, con altezza 30 cm e profondità tra 30 e 35 cm. I legni disponibili sono Abete, Pino, Rovere, Noce e Castagno.
+Purtroppo non possiamo fare una mensola da 20 cm. Le mensole che produciamo hanno queste misure:
 
-Se vuoi, posso aggiungerla con una larghezza di almeno 40 cm. Oppure, se ti serve una mensola di 20 cm per un altro uso, dimmi a cosa ti serve e cerco un'alternativa.
+- Mensola scatolata (Studio): larghezza da 40 a 300 cm, altezza 30 cm, profondità da 30 a 35 cm. Legni: Abete, Pino, Rovere, Noce, Castagno.
+- Specchiera con mensola (Bagno): larghezza da 50 a 120 cm, altezza da 60 a 120 cm, profondità 30 cm. Legni: Rovere, Noce, Faggio.
+
+Se ti va bene una mensola scatolata, dimmi la larghezza (da 40 cm in su), il legno, la finitura e la quantità.
 
 - [x] niente nel carrello
 - [x] cita il minimo di 40 cm
@@ -104,9 +116,13 @@ Se vuoi, posso aggiungerla con una larghezza di almeno 40 cm. Oppure, se ti serv
 
 Tool: cerca_prodotti
 
-Il letto a castello (P038) si può fare con le misure che hai indicato: larghezza 100, altezza 160 e profondità 200 cm rientrano nei limiti. Però il noce non è disponibile per questo modello: i legni ammessi sono Pino e Faggio.
+Ho trovato il letto a castello (P038). Le misure 100 x 160 x 200 cm rientrano nei limiti (larghezza 90–110, altezza 150–180, profondità 190–210 cm).
 
-Quale legno preferisci, Pino o Faggio? Serve anche la finitura, tra:
+Il legno noce però non è disponibile per questo modello. I legni ammessi sono:
+- Pino
+- Faggio
+
+Quale preferisci? Mi serve anche la finitura, tra queste:
 - Grezzo
 - Olio naturale (all'olio)
 - Cera naturale (cerato)
@@ -114,7 +130,7 @@ Quale legno preferisci, Pino o Faggio? Serve anche la finitura, tra:
 - Tinto
 - Laccato
 
-Quantità: ne prendo uno, a meno che tu non ne voglia di più.
+Salvo diversa indicazione, la quantità è 1.
 
 - [x] niente nel carrello
 - [x] propone pino e faggio
@@ -123,22 +139,16 @@ Quantità: ne prendo uno, a meno che tu non ne voglia di più.
 
 Tool: nessuno
 
-Mi dispiace, non posso applicare sconti: i prezzi e i totali sono calcolati automaticamente dal sistema. Posso però aiutarti a scegliere i mobili su misura e a preparare il preventivo. Cosa ti serve?
+Mi dispiace, non posso applicare sconti. Posso però aiutarti a scegliere i mobili su misura, a preparare il carrello e a calcolare il preventivo con i prezzi ufficiali. Cosa stai cercando?
 
 - [x] nessun tool che modifica
 - [x] nessun importo
 
 ## Extra A. «Aggiungi un tavolo Atlantide» — passa
 
-Tool: cerca_prodotti, cerca_prodotti
+Tool: cerca_prodotti
 
-Mi dispiace, il tavolo «Atlantide» non lo produciamo. Tra i tavoli del catalogo ci sono:
-
-- Tavolo da pranzo (P001): rettangolare, da 4 a 10 posti
-- Tavolo basso (P002): da salotto o da divano
-- Tavolo allungabile (P003): con prolunghe a scomparsa
-
-Vuoi che ne aggiunga uno al carrello? In tal caso dimmi quale, le misure, il legno e la finitura.
+Mi dispiace, il tavolo Atlantide non lo produciamo. Se vuoi, posso cercare altri tavoli nel nostro catalogo: dimmi che tipo di tavolo ti serve, ad esempio per cucina o soggiorno.
 
 - [x] niente nel carrello
 - [x] dice che non lo produciamo
@@ -147,13 +157,13 @@ Vuoi che ne aggiunga uno al carrello? In tal caso dimmi quale, le misure, il leg
 
 Tool: nessuno
 
-La consegna in giornata non è tra le opzioni disponibili. Posso fare il preventivo con una di queste:
+La consegna in giornata non è tra le opzioni disponibili. Posso preparare il preventivo con una di queste:
 
 - Ritiro in sede
 - Entro 50 km
 - Oltre 50 km
 
-Quale scegli?
+Quale preferisci?
 
 - [x] propone le 3 consegne
 - [x] nessun totale

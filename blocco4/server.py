@@ -55,6 +55,7 @@ MISURE = ("larghezza", "altezza", "profondita")
 NOMI_MISURE = {"larghezza": "larghezza", "altezza": "altezza", "profondita": "profondità"}
 
 CARRELLI = {}  # session_id -> lista di righe del carrello
+CONSEGNE = {}  # session_id -> consegna dell'ultimo preventivo (per ricalcolarlo se il carrello cambia)
 
 
 class ErroreTool(Exception):
@@ -130,6 +131,17 @@ def righe_testo(n):
     return "1 riga" if n == 1 else f"{n} righe"
 
 
+def ricalcola_se_serve(sid):
+    """Se c'era già un preventivo, il risultato del tool chiede di rifarlo con la stessa consegna."""
+    consegna = CONSEGNE.get(sid)
+    if consegna and CARRELLI.get(sid):
+        return (
+            f"\nC'era già un preventivo con consegna «{consegna}»: chiama subito "
+            f"calcola_preventivo con consegna «{consegna}» e mostra il nuovo preventivo, senza chiedere."
+        )
+    return ""
+
+
 def numero(valore, nome):
     if isinstance(valore, bool) or not isinstance(valore, (int, float)):
         raise ErroreTool(f"{nome} deve essere un numero in cm.")
@@ -175,6 +187,7 @@ def aggiungi_al_carrello(ctx, prodotto_id, larghezza, altezza, profondita, legno
     return (
         "Aggiunto. " + descrivi_riga(len(carrello), riga)
         + f"\nIl carrello ha {righe_testo(len(carrello))}. Prezzi IVA e consegna escluse."
+        + ricalcola_se_serve(ctx["session_id"])
     )
 
 
@@ -198,6 +211,7 @@ def rimuovi_dal_carrello(ctx, riga):
     return (
         f"Rimossa: {tolta['nome']} ({tolta['legno']}, quantità {tolta['quantita']}). "
         f"Le righe sono state rinumerate. Carrello attuale:\n{resto}"
+        + ricalcola_se_serve(ctx["session_id"])
     )
 
 
@@ -214,6 +228,7 @@ def svuota_carrello(ctx, confermato):
             "il carrello e chiama il tool solo dopo il suo sì."
         )
     CARRELLI[ctx["session_id"]] = []
+    CONSEGNE.pop(ctx["session_id"], None)
     return "Carrello svuotato."
 
 
@@ -232,6 +247,7 @@ def tool_calcola_preventivo(ctx, consegna):
         righe.append(
             f"Riga {n}: {r['nome']} {r['quantita']} × {euro(r['prezzo'])} = {euro(totale_riga)}"
         )
+    CONSEGNE[ctx["session_id"]] = consegna
     costo_consegna = LISTINO["consegne"][consegna]
     imponibile = round(merce + costo_consegna, 2)
     iva = round(imponibile * LISTINO["parametri"]["iva"], 2)
@@ -429,7 +445,7 @@ def chat(req: Richiesta):
     with LOCK_SESSIONI.setdefault(sid, threading.Lock()):
         if sid not in STORIE and len(STORIE) >= MAX_SESSIONI:
             vecchia = next(iter(STORIE))
-            for d in (STORIE, RIASSUNTI, LOCK_SESSIONI, CARRELLI):
+            for d in (STORIE, RIASSUNTI, LOCK_SESSIONI, CARRELLI, CONSEGNE):
                 d.pop(vecchia, None)
         try:
             testo, storia, riassunto, strumenti = turno(
