@@ -1,0 +1,158 @@
+[
+ {
+  "name": "cerca_prodotti",
+  "description": "Cerca nel catalogo per testo (nome o descrizione) e/o categoria. Restituisce al massimo 8 prodotti con id, misure min/max e legni ammessi.",
+  "input_schema": {
+   "type": "object",
+   "properties": {
+    "testo": {
+     "type": "string",
+     "description": "Parola da cercare, es. 'libreria'"
+    },
+    "categoria": {
+     "type": "string",
+     "enum": [
+      "Armadi",
+      "Bagno",
+      "Bambini",
+      "Camera",
+      "Cucina",
+      "Giardino",
+      "Ingresso",
+      "Librerie",
+      "Negozi",
+      "Sedute",
+      "Soggiorno",
+      "Studio",
+      "Tavoli",
+      "Ufficio"
+     ]
+    }
+   },
+   "required": []
+  }
+ },
+ {
+  "name": "aggiungi_al_carrello",
+  "description": "Aggiunge al carrello un prodotto configurato. Usa un prodotto_id restituito da cerca_prodotti. Le misure devono stare nei limiti del prodotto.",
+  "input_schema": {
+   "type": "object",
+   "properties": {
+    "prodotto_id": {
+     "type": "string",
+     "description": "Es. 'P004'"
+    },
+    "larghezza": {
+     "type": "number",
+     "description": "cm"
+    },
+    "altezza": {
+     "type": "number",
+     "description": "cm"
+    },
+    "profondita": {
+     "type": "number",
+     "description": "cm"
+    },
+    "legno": {
+     "type": "string",
+     "enum": [
+      "Abete",
+      "Pino",
+      "Faggio",
+      "Frassino",
+      "Castagno",
+      "Rovere",
+      "Ciliegio",
+      "Noce"
+     ]
+    },
+    "finitura": {
+     "type": "string",
+     "enum": [
+      "Grezzo",
+      "Olio naturale",
+      "Cera naturale",
+      "Verniciato opaco",
+      "Tinto",
+      "Laccato"
+     ]
+    },
+    "quantita": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 20
+    }
+   },
+   "required": [
+    "prodotto_id",
+    "larghezza",
+    "altezza",
+    "profondita",
+    "legno",
+    "finitura",
+    "quantita"
+   ]
+  }
+ },
+ {
+  "name": "mostra_carrello",
+  "description": "Mostra le righe del carrello con il loro numero (riga 1, 2, ...).",
+  "input_schema": {
+   "type": "object",
+   "properties": {},
+   "required": []
+  }
+ },
+ {
+  "name": "rimuovi_dal_carrello",
+  "description": "Rimuove una riga del carrello dato il suo numero (vedi mostra_carrello).",
+  "input_schema": {
+   "type": "object",
+   "properties": {
+    "riga": {
+     "type": "integer",
+     "minimum": 1
+    }
+   },
+   "required": [
+    "riga"
+   ]
+  }
+ },
+ {
+  "name": "svuota_carrello",
+  "description": "Svuota il carrello. Chiamare solo dopo conferma esplicita dell'utente nel messaggio precedente.",
+  "input_schema": {
+   "type": "object",
+   "properties": {
+    "confermato": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "confermato"
+   ]
+  }
+ },
+ {
+  "name": "calcola_preventivo",
+  "description": "Calcola il preventivo dell'intero carrello con la consegna scelta. Il totale lo calcola il sistema: riportalo così com'è.",
+  "input_schema": {
+   "type": "object",
+   "properties": {
+    "consegna": {
+     "type": "string",
+     "enum": [
+      "Ritiro in sede",
+      "Entro 50 km",
+      "Oltre 50 km"
+     ]
+    }
+   },
+   "required": [
+    "consegna"
+   ]
+  }
+ }
+]
