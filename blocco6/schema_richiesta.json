@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "larghezza": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "altezza": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "profondita": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "legno": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "finitura": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "consegna": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mancanti": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "larghezza",
+    "altezza",
+    "profondita",
+    "legno",
+    "finitura",
+    "consegna",
+    "mancanti"
+  ]
+}
