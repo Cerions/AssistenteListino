@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legno &amp; Co. – assistente</title>
+<style>
+ body{font-family:system-ui,sans-serif;margin:0;background:#f5f3ec}
+ #box{position:fixed;right:16px;bottom:16px;width:min(360px,calc(100vw - 32px));background:#fff;border:1px solid #ddd;border-radius:12px;display:flex;flex-direction:column;max-height:70vh}
+ #log{overflow:auto;padding:12px;flex:1}.u{text-align:right;color:#b8431a}.b{color:#14181f}p{white-space:pre-wrap;overflow-wrap:anywhere}
+ form{display:flex;border-top:1px solid #eee}input{flex:1;border:0;padding:12px;font-size:16px}button{border:0;background:#b8431a;color:#fff;padding:0 16px}
+</style></head><body>
+<h1 style="padding:16px">Legno &amp; Co.</h1>
+<div id="box"><div id="log"></div>
+<form id="f"><input id="m" placeholder="Scrivi qui…" autocomplete="off" maxlength="500"><button>Invia</button></form></div>
+<script>
+const URL_CHAT = "http://127.0.0.1:8000/chat";   // il TUO backend, non il provider
+const sid = sessionStorage.sid || (sessionStorage.sid = crypto.randomUUID());
+const log = document.getElementById("log");
+function add(cls, t){ const p=document.createElement("p"); p.className=cls; p.textContent=t; log.append(p); log.scrollTop=log.scrollHeight; }
+add("b","Ciao! Sono un assistente automatico (IA) di Legno & Co. Come posso aiutarti?");
+document.getElementById("f").onsubmit = async e => {
+  e.preventDefault(); const i=document.getElementById("m"), t=i.value.trim(); if(!t) return; i.value=""; add("u",t);
+  try { const r = await fetch(URL_CHAT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({session_id:sid,messaggio:t})});
+        const dati = await r.json();
+        // in caso di errore il server manda {detail: "..."} invece di {risposta: "..."}
+        add("b", r.ok ? dati.risposta : (typeof dati.detail === "string" ? dati.detail : "Messaggio non valido.")); }
+  catch(err){ add("b","Servizio non disponibile, riprova tra poco."); }
+};
+// FACOLTATIVO (voce): speechSynthesis.speak(new SpeechSynthesisUtterance(testo)) e webkitSpeechRecognition per il microfono
+</script></body></html>

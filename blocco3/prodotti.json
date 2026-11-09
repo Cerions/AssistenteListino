@@ -1,0 +1,1684 @@
+[
+ {
+  "id": "P001",
+  "nome": "Tavolo da pranzo",
+  "categoria": "Tavoli",
+  "misure_min_cm": {
+   "larghezza": 120,
+   "altezza": 75,
+   "profondita": 70
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 80,
+   "profondita": 120
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Castagno",
+   "Abete"
+  ],
+  "tempi_consegna_giorni": 25,
+  "misura_tipica_cm": {
+   "larghezza": 210,
+   "altezza": 75,
+   "profondita": 95
+  },
+  "descrizione": "Tavolo rettangolare per la sala da pranzo, da 4 a 10 posti."
+ },
+ {
+  "id": "P002",
+  "nome": "Tavolo basso",
+  "categoria": "Tavoli",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 35,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 160,
+   "altezza": 50,
+   "profondita": 90
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Pino",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 18,
+  "misura_tipica_cm": {
+   "larghezza": 110,
+   "altezza": 40,
+   "profondita": 65
+  },
+  "descrizione": "Tavolino basso da salotto o da divano."
+ },
+ {
+  "id": "P003",
+  "nome": "Tavolo allungabile",
+  "categoria": "Tavoli",
+  "misure_min_cm": {
+   "larghezza": 140,
+   "altezza": 75,
+   "profondita": 80
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 80,
+   "profondita": 110
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 35,
+  "misura_tipica_cm": {
+   "larghezza": 220,
+   "altezza": 75,
+   "profondita": 95
+  },
+  "descrizione": "Tavolo da pranzo con prolunghe a scomparsa, per chi riceve spesso ospiti."
+ },
+ {
+  "id": "P004",
+  "nome": "Libreria a giorno",
+  "categoria": "Librerie",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 120,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 250,
+   "profondita": 45
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 20,
+  "misura_tipica_cm": {
+   "larghezza": 180,
+   "altezza": 185,
+   "profondita": 35
+  },
+  "descrizione": "Libreria aperta senza ante, anche come divisorio leggero."
+ },
+ {
+  "id": "P005",
+  "nome": "Libreria a muro su misura",
+  "categoria": "Librerie",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 180,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 280,
+   "profondita": 40
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Rovere",
+   "Castagno",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 30,
+  "misura_tipica_cm": {
+   "larghezza": 190,
+   "altezza": 230,
+   "profondita": 35
+  },
+  "descrizione": "Libreria fissata a parete, a tutta altezza, sfrutta nicchie e sottotetti."
+ },
+ {
+  "id": "P006",
+  "nome": "Libreria bifacciale",
+  "categoria": "Librerie",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 120,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 250,
+   "altezza": 200,
+   "profondita": 45
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 28,
+  "misura_tipica_cm": {
+   "larghezza": 160,
+   "altezza": 160,
+   "profondita": 40
+  },
+  "descrizione": "Libreria accessibile dai due lati, pensata come divisorio tra ambienti."
+ },
+ {
+  "id": "P007",
+  "nome": "Panca da ingresso",
+  "categoria": "Sedute",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 45,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 50,
+   "profondita": 45
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Pino",
+   "Rovere",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 12,
+  "misura_tipica_cm": {
+   "larghezza": 140,
+   "altezza": 45,
+   "profondita": 35
+  },
+  "descrizione": "Panca semplice per l'ingresso, per sedersi a mettere le scarpe."
+ },
+ {
+  "id": "P008",
+  "nome": "Sgabello alto",
+  "categoria": "Sedute",
+  "misure_min_cm": {
+   "larghezza": 30,
+   "altezza": 60,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 45,
+   "altezza": 80,
+   "profondita": 45
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 10,
+  "misura_tipica_cm": {
+   "larghezza": 30,
+   "altezza": 70,
+   "profondita": 35
+  },
+  "descrizione": "Sgabello alto per isola o bancone della cucina."
+ },
+ {
+  "id": "P009",
+  "nome": "Panca con contenitore",
+  "categoria": "Sedute",
+  "misure_min_cm": {
+   "larghezza": 90,
+   "altezza": 45,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 55,
+   "profondita": 50
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Pino",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 18,
+  "misura_tipica_cm": {
+   "larghezza": 140,
+   "altezza": 50,
+   "profondita": 40
+  },
+  "descrizione": "Panca con seduta apribile e vano contenitore interno."
+ },
+ {
+  "id": "P010",
+  "nome": "Armadio due ante",
+  "categoria": "Armadi",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 180,
+   "profondita": 50
+  },
+  "misure_max_cm": {
+   "larghezza": 220,
+   "altezza": 260,
+   "profondita": 70
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 40,
+  "misura_tipica_cm": {
+   "larghezza": 150,
+   "altezza": 220,
+   "profondita": 60
+  },
+  "descrizione": "Armadio classico a due ante battenti con ripiani e asta appendiabiti."
+ },
+ {
+  "id": "P011",
+  "nome": "Armadio scorrevole",
+  "categoria": "Armadi",
+  "misure_min_cm": {
+   "larghezza": 150,
+   "altezza": 200,
+   "profondita": 55
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 270,
+   "profondita": 70
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 45,
+  "misura_tipica_cm": {
+   "larghezza": 220,
+   "altezza": 235,
+   "profondita": 60
+  },
+  "descrizione": "Armadio con ante scorrevoli, adatto a camere strette."
+ },
+ {
+  "id": "P012",
+  "nome": "Cabina armadio modulare",
+  "categoria": "Armadi",
+  "misure_min_cm": {
+   "larghezza": 150,
+   "altezza": 210,
+   "profondita": 60
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 280,
+   "profondita": 100
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 50,
+  "misura_tipica_cm": {
+   "larghezza": 220,
+   "altezza": 245,
+   "profondita": 80
+  },
+  "descrizione": "Cabina armadio a moduli componibili, senza ante o con ante a scelta."
+ },
+ {
+  "id": "P013",
+  "nome": "Comodino",
+  "categoria": "Camera",
+  "misure_min_cm": {
+   "larghezza": 35,
+   "altezza": 40,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 60,
+   "altezza": 65,
+   "profondita": 45
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Noce",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 10,
+  "misura_tipica_cm": {
+   "larghezza": 40,
+   "altezza": 50,
+   "profondita": 35
+  },
+  "descrizione": "Comodino con cassetto e vano a giorno."
+ },
+ {
+  "id": "P014",
+  "nome": "Testiera letto",
+  "categoria": "Camera",
+  "misure_min_cm": {
+   "larghezza": 90,
+   "altezza": 80,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 220,
+   "altezza": 150,
+   "profondita": 45
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 14,
+  "misura_tipica_cm": {
+   "larghezza": 150,
+   "altezza": 115,
+   "profondita": 35
+  },
+  "descrizione": "Testiera da fissare a muro o al letto, anche imbottibile."
+ },
+ {
+  "id": "P015",
+  "nome": "Cassettiera",
+  "categoria": "Camera",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 80,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 160,
+   "altezza": 130,
+   "profondita": 55
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Rovere",
+   "Noce",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 22,
+  "misura_tipica_cm": {
+   "larghezza": 110,
+   "altezza": 105,
+   "profondita": 45
+  },
+  "descrizione": "Cassettiera da camera con 3-6 cassetti."
+ },
+ {
+  "id": "P016",
+  "nome": "Scrivania",
+  "categoria": "Studio",
+  "misure_min_cm": {
+   "larghezza": 100,
+   "altezza": 72,
+   "profondita": 50
+  },
+  "misure_max_cm": {
+   "larghezza": 220,
+   "altezza": 78,
+   "profondita": 90
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 20,
+  "misura_tipica_cm": {
+   "larghezza": 160,
+   "altezza": 75,
+   "profondita": 70
+  },
+  "descrizione": "Scrivania lineare per studio o home office."
+ },
+ {
+  "id": "P017",
+  "nome": "Scrivania ad angolo",
+  "categoria": "Studio",
+  "misure_min_cm": {
+   "larghezza": 140,
+   "altezza": 72,
+   "profondita": 120
+  },
+  "misure_max_cm": {
+   "larghezza": 280,
+   "altezza": 78,
+   "profondita": 200
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 28,
+  "misura_tipica_cm": {
+   "larghezza": 210,
+   "altezza": 75,
+   "profondita": 160
+  },
+  "descrizione": "Scrivania a L per sfruttare un angolo della stanza."
+ },
+ {
+  "id": "P018",
+  "nome": "Mensola scatolata",
+  "categoria": "Studio",
+  "misure_min_cm": {
+   "larghezza": 40,
+   "altezza": 30,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 30,
+   "profondita": 35
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Pino",
+   "Rovere",
+   "Noce",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 5,
+  "misura_tipica_cm": {
+   "larghezza": 170,
+   "altezza": 30,
+   "profondita": 30
+  },
+  "descrizione": "Mensola chiusa a scatola, con fissaggio invisibile."
+ },
+ {
+  "id": "P019",
+  "nome": "Credenza",
+  "categoria": "Cucina",
+  "misure_min_cm": {
+   "larghezza": 100,
+   "altezza": 80,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 260,
+   "altezza": 110,
+   "profondita": 55
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Rovere",
+   "Castagno",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 30,
+  "misura_tipica_cm": {
+   "larghezza": 180,
+   "altezza": 95,
+   "profondita": 45
+  },
+  "descrizione": "Credenza bassa da cucina o soggiorno con ante e cassetti."
+ },
+ {
+  "id": "P020",
+  "nome": "Madia",
+  "categoria": "Cucina",
+  "misure_min_cm": {
+   "larghezza": 120,
+   "altezza": 85,
+   "profondita": 45
+  },
+  "misure_max_cm": {
+   "larghezza": 250,
+   "altezza": 100,
+   "profondita": 60
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Rovere",
+   "Abete"
+  ],
+  "tempi_consegna_giorni": 32,
+  "misura_tipica_cm": {
+   "larghezza": 180,
+   "altezza": 90,
+   "profondita": 50
+  },
+  "descrizione": "Madia tradizionale da cucina, stile rustico."
+ },
+ {
+  "id": "P021",
+  "nome": "Isola con piano in legno",
+  "categoria": "Cucina",
+  "misure_min_cm": {
+   "larghezza": 100,
+   "altezza": 90,
+   "profondita": 60
+  },
+  "misure_max_cm": {
+   "larghezza": 280,
+   "altezza": 95,
+   "profondita": 120
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 38,
+  "misura_tipica_cm": {
+   "larghezza": 190,
+   "altezza": 90,
+   "profondita": 90
+  },
+  "descrizione": "Isola da cucina con piano di lavoro in legno massello."
+ },
+ {
+  "id": "P022",
+  "nome": "Consolle",
+  "categoria": "Ingresso",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 75,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 180,
+   "altezza": 90,
+   "profondita": 40
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 14,
+  "misura_tipica_cm": {
+   "larghezza": 130,
+   "altezza": 80,
+   "profondita": 35
+  },
+  "descrizione": "Consolle stretta da ingresso o dietro al divano."
+ },
+ {
+  "id": "P023",
+  "nome": "Appendiabiti a muro",
+  "categoria": "Ingresso",
+  "misure_min_cm": {
+   "larghezza": 50,
+   "altezza": 30,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 40,
+   "profondita": 30
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Rovere",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 6,
+  "misura_tipica_cm": {
+   "larghezza": 120,
+   "altezza": 35,
+   "profondita": 30
+  },
+  "descrizione": "Barra appendiabiti da parete con pomoli in legno."
+ },
+ {
+  "id": "P024",
+  "nome": "Mobile scarpiera",
+  "categoria": "Ingresso",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 70,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 150,
+   "altezza": 120,
+   "profondita": 45
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Pino",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 18,
+  "misura_tipica_cm": {
+   "larghezza": 100,
+   "altezza": 95,
+   "profondita": 35
+  },
+  "descrizione": "Scarpiera da ingresso con ante a ribalta."
+ },
+ {
+  "id": "P025",
+  "nome": "Tavolo da giardino",
+  "categoria": "Giardino",
+  "misure_min_cm": {
+   "larghezza": 120,
+   "altezza": 75,
+   "profondita": 70
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 80,
+   "profondita": 110
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Rovere",
+   "Pino"
+  ],
+  "tempi_consegna_giorni": 28,
+  "misura_tipica_cm": {
+   "larghezza": 210,
+   "altezza": 75,
+   "profondita": 90
+  },
+  "descrizione": "Tavolo per esterno, trattato contro l'umidità."
+ },
+ {
+  "id": "P026",
+  "nome": "Fioriera",
+  "categoria": "Giardino",
+  "misure_min_cm": {
+   "larghezza": 40,
+   "altezza": 40,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 70,
+   "profondita": 60
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Abete",
+   "Pino"
+  ],
+  "tempi_consegna_giorni": 8,
+  "misura_tipica_cm": {
+   "larghezza": 120,
+   "altezza": 55,
+   "profondita": 45
+  },
+  "descrizione": "Fioriera da esterno, per terrazzi e giardini."
+ },
+ {
+  "id": "P027",
+  "nome": "Pergolato da parete",
+  "categoria": "Giardino",
+  "misure_min_cm": {
+   "larghezza": 150,
+   "altezza": 200,
+   "profondita": 100
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 300,
+   "profondita": 300
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Abete"
+  ],
+  "tempi_consegna_giorni": 45,
+  "misura_tipica_cm": {
+   "larghezza": 220,
+   "altezza": 250,
+   "profondita": 200
+  },
+  "descrizione": "Pergolato addossato alla parete, per ombreggiare un terrazzo."
+ },
+ {
+  "id": "P028",
+  "nome": "Mobile TV",
+  "categoria": "Soggiorno",
+  "misure_min_cm": {
+   "larghezza": 100,
+   "altezza": 40,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 250,
+   "altezza": 70,
+   "profondita": 50
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 22,
+  "misura_tipica_cm": {
+   "larghezza": 170,
+   "altezza": 55,
+   "profondita": 40
+  },
+  "descrizione": "Mobile basso porta TV con vani per i dispositivi."
+ },
+ {
+  "id": "P029",
+  "nome": "Panca-libreria",
+  "categoria": "Soggiorno",
+  "misure_min_cm": {
+   "larghezza": 100,
+   "altezza": 60,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 260,
+   "altezza": 110,
+   "profondita": 45
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Rovere",
+   "Noce"
+  ],
+  "tempi_consegna_giorni": 24,
+  "misura_tipica_cm": {
+   "larghezza": 180,
+   "altezza": 85,
+   "profondita": 35
+  },
+  "descrizione": "Mobile basso che fa da panca e da libreria."
+ },
+ {
+  "id": "P030",
+  "nome": "Tavolino da salotto",
+  "categoria": "Soggiorno",
+  "misure_min_cm": {
+   "larghezza": 50,
+   "altezza": 35,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 130,
+   "altezza": 50,
+   "profondita": 80
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Castagno",
+   "Pino"
+  ],
+  "tempi_consegna_giorni": 14,
+  "misura_tipica_cm": {
+   "larghezza": 90,
+   "altezza": 40,
+   "profondita": 60
+  },
+  "descrizione": "Tavolino da salotto con ripiano inferiore."
+ },
+ {
+  "id": "P031",
+  "nome": "Mobile lavabo",
+  "categoria": "Bagno",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 50,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 160,
+   "altezza": 90,
+   "profondita": 55
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 20,
+  "misura_tipica_cm": {
+   "larghezza": 110,
+   "altezza": 70,
+   "profondita": 48
+  },
+  "descrizione": "Mobile sotto lavabo con trattamento resistente all'acqua."
+ },
+ {
+  "id": "P032",
+  "nome": "Colonna bagno",
+  "categoria": "Bagno",
+  "misure_min_cm": {
+   "larghezza": 30,
+   "altezza": 120,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 50,
+   "altezza": 190,
+   "profondita": 40
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Frassino",
+   "Faggio"
+  ],
+  "tempi_consegna_giorni": 16,
+  "misura_tipica_cm": {
+   "larghezza": 40,
+   "altezza": 155,
+   "profondita": 35
+  },
+  "descrizione": "Colonna alta e stretta per asciugamani e prodotti."
+ },
+ {
+  "id": "P033",
+  "nome": "Specchiera con mensola",
+  "categoria": "Bagno",
+  "misure_min_cm": {
+   "larghezza": 50,
+   "altezza": 60,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 120,
+   "altezza": 120,
+   "profondita": 30
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Faggio"
+  ],
+  "tempi_consegna_giorni": 10,
+  "misura_tipica_cm": {
+   "larghezza": 85,
+   "altezza": 90,
+   "profondita": 30
+  },
+  "descrizione": "Cornice in legno per specchio con mensola inferiore."
+ },
+ {
+  "id": "P034",
+  "nome": "Mobile lavatrice",
+  "categoria": "Bagno",
+  "misure_min_cm": {
+   "larghezza": 65,
+   "altezza": 90,
+   "profondita": 60
+  },
+  "misure_max_cm": {
+   "larghezza": 140,
+   "altezza": 200,
+   "profondita": 70
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Faggio",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 18,
+  "misura_tipica_cm": {
+   "larghezza": 102,
+   "altezza": 145,
+   "profondita": 65
+  },
+  "descrizione": "Mobile che copre lavatrice e asciugatrice, con vano superiore."
+ },
+ {
+  "id": "P035",
+  "nome": "Letto matrimoniale",
+  "categoria": "Camera",
+  "misure_min_cm": {
+   "larghezza": 160,
+   "altezza": 35,
+   "profondita": 200
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 120,
+   "profondita": 220
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Ciliegio",
+   "Faggio"
+  ],
+  "tempi_consegna_giorni": 30,
+  "misura_tipica_cm": {
+   "larghezza": 180,
+   "altezza": 78,
+   "profondita": 210
+  },
+  "descrizione": "Giroletto matrimoniale con testiera, rete esclusa."
+ },
+ {
+  "id": "P036",
+  "nome": "Letto singolo",
+  "categoria": "Camera",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 35,
+   "profondita": 190
+  },
+  "misure_max_cm": {
+   "larghezza": 120,
+   "altezza": 110,
+   "profondita": 210
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Faggio",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 22,
+  "misura_tipica_cm": {
+   "larghezza": 100,
+   "altezza": 72,
+   "profondita": 200
+  },
+  "descrizione": "Letto singolo o a una piazza e mezza, rete esclusa."
+ },
+ {
+  "id": "P037",
+  "nome": "Settimino",
+  "categoria": "Camera",
+  "misure_min_cm": {
+   "larghezza": 50,
+   "altezza": 120,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 70,
+   "altezza": 160,
+   "profondita": 50
+  },
+  "legni_ammessi": [
+   "Ciliegio",
+   "Noce",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 25,
+  "misura_tipica_cm": {
+   "larghezza": 60,
+   "altezza": 140,
+   "profondita": 45
+  },
+  "descrizione": "Cassettiera alta e stretta a sette cassetti."
+ },
+ {
+  "id": "P038",
+  "nome": "Letto a castello",
+  "categoria": "Bambini",
+  "misure_min_cm": {
+   "larghezza": 90,
+   "altezza": 150,
+   "profondita": 190
+  },
+  "misure_max_cm": {
+   "larghezza": 110,
+   "altezza": 180,
+   "profondita": 210
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Faggio"
+  ],
+  "tempi_consegna_giorni": 30,
+  "misura_tipica_cm": {
+   "larghezza": 100,
+   "altezza": 165,
+   "profondita": 200
+  },
+  "descrizione": "Due letti sovrapposti con scaletta e sponde di sicurezza."
+ },
+ {
+  "id": "P039",
+  "nome": "Scrivania cameretta",
+  "categoria": "Bambini",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 60,
+   "profondita": 45
+  },
+  "misure_max_cm": {
+   "larghezza": 140,
+   "altezza": 72,
+   "profondita": 70
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Faggio",
+   "Abete"
+  ],
+  "tempi_consegna_giorni": 15,
+  "misura_tipica_cm": {
+   "larghezza": 110,
+   "altezza": 66,
+   "profondita": 58
+  },
+  "descrizione": "Scrivania ad altezza ridotta per bambini e ragazzi."
+ },
+ {
+  "id": "P040",
+  "nome": "Cassapanca giochi",
+  "categoria": "Bambini",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 40,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 120,
+   "altezza": 60,
+   "profondita": 50
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Abete",
+   "Faggio"
+  ],
+  "tempi_consegna_giorni": 12,
+  "misura_tipica_cm": {
+   "larghezza": 90,
+   "altezza": 50,
+   "profondita": 42
+  },
+  "descrizione": "Cassapanca con coperchio rallentato, per riporre i giochi."
+ },
+ {
+  "id": "P041",
+  "nome": "Libreria bassa cameretta",
+  "categoria": "Bambini",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 60,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 160,
+   "altezza": 110,
+   "profondita": 35
+  },
+  "legni_ammessi": [
+   "Pino",
+   "Faggio",
+   "Abete"
+  ],
+  "tempi_consegna_giorni": 14,
+  "misura_tipica_cm": {
+   "larghezza": 110,
+   "altezza": 85,
+   "profondita": 32
+  },
+  "descrizione": "Libreria bassa con ripiani alla portata dei bambini."
+ },
+ {
+  "id": "P042",
+  "nome": "Tavolo riunioni",
+  "categoria": "Ufficio",
+  "misure_min_cm": {
+   "larghezza": 180,
+   "altezza": 74,
+   "profondita": 90
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 76,
+   "profondita": 140
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 35,
+  "misura_tipica_cm": {
+   "larghezza": 240,
+   "altezza": 75,
+   "profondita": 115
+  },
+  "descrizione": "Tavolo da sala riunioni con passacavi."
+ },
+ {
+  "id": "P043",
+  "nome": "Scaffale archivio",
+  "categoria": "Ufficio",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 180,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 250,
+   "profondita": 50
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Faggio",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 20,
+  "misura_tipica_cm": {
+   "larghezza": 140,
+   "altezza": 215,
+   "profondita": 42
+  },
+  "descrizione": "Scaffale robusto per faldoni e raccoglitori."
+ },
+ {
+  "id": "P044",
+  "nome": "Bancone reception",
+  "categoria": "Ufficio",
+  "misure_min_cm": {
+   "larghezza": 120,
+   "altezza": 100,
+   "profondita": 50
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 115,
+   "profondita": 80
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 40,
+  "misura_tipica_cm": {
+   "larghezza": 210,
+   "altezza": 108,
+   "profondita": 65
+  },
+  "descrizione": "Bancone di accoglienza per uffici e studi professionali."
+ },
+ {
+  "id": "P045",
+  "nome": "Cassettiera da ufficio su ruote",
+  "categoria": "Ufficio",
+  "misure_min_cm": {
+   "larghezza": 40,
+   "altezza": 55,
+   "profondita": 45
+  },
+  "misure_max_cm": {
+   "larghezza": 50,
+   "altezza": 70,
+   "profondita": 60
+  },
+  "legni_ammessi": [
+   "Faggio",
+   "Frassino",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 12,
+  "misura_tipica_cm": {
+   "larghezza": 45,
+   "altezza": 62,
+   "profondita": 52
+  },
+  "descrizione": "Cassettiera a tre cassetti con ruote e serratura."
+ },
+ {
+  "id": "P046",
+  "nome": "Vetrina",
+  "categoria": "Soggiorno",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 150,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 160,
+   "altezza": 210,
+   "profondita": 50
+  },
+  "legni_ammessi": [
+   "Ciliegio",
+   "Noce",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 30,
+  "misura_tipica_cm": {
+   "larghezza": 120,
+   "altezza": 180,
+   "profondita": 42
+  },
+  "descrizione": "Mobile con ante in vetro per esporre servizi e oggetti."
+ },
+ {
+  "id": "P047",
+  "nome": "Mobile bar",
+  "categoria": "Soggiorno",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 90,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 160,
+   "altezza": 140,
+   "profondita": 55
+  },
+  "legni_ammessi": [
+   "Noce",
+   "Ciliegio",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 26,
+  "misura_tipica_cm": {
+   "larghezza": 120,
+   "altezza": 115,
+   "profondita": 48
+  },
+  "descrizione": "Mobile con vano bottiglie e portabicchieri."
+ },
+ {
+  "id": "P048",
+  "nome": "Consolle allungabile",
+  "categoria": "Soggiorno",
+  "misure_min_cm": {
+   "larghezza": 90,
+   "altezza": 76,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 120,
+   "altezza": 78,
+   "profondita": 60
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 30,
+  "misura_tipica_cm": {
+   "larghezza": 105,
+   "altezza": 77,
+   "profondita": 50
+  },
+  "descrizione": "Consolle che si apre in un tavolo da pranzo (misure da chiusa)."
+ },
+ {
+  "id": "P049",
+  "nome": "Dispensa",
+  "categoria": "Cucina",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 180,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 120,
+   "altezza": 220,
+   "profondita": 60
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Castagno",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 28,
+  "misura_tipica_cm": {
+   "larghezza": 90,
+   "altezza": 200,
+   "profondita": 50
+  },
+  "descrizione": "Mobile alto da cucina per alimenti, con ripiani regolabili."
+ },
+ {
+  "id": "P050",
+  "nome": "Tavolo da cucina",
+  "categoria": "Cucina",
+  "misure_min_cm": {
+   "larghezza": 80,
+   "altezza": 75,
+   "profondita": 60
+  },
+  "misure_max_cm": {
+   "larghezza": 160,
+   "altezza": 78,
+   "profondita": 90
+  },
+  "legni_ammessi": [
+   "Faggio",
+   "Castagno",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 18,
+  "misura_tipica_cm": {
+   "larghezza": 120,
+   "altezza": 76,
+   "profondita": 75
+  },
+  "descrizione": "Tavolo robusto per l'uso quotidiano in cucina."
+ },
+ {
+  "id": "P051",
+  "nome": "Carrello da cucina",
+  "categoria": "Cucina",
+  "misure_min_cm": {
+   "larghezza": 40,
+   "altezza": 80,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 80,
+   "altezza": 95,
+   "profondita": 50
+  },
+  "legni_ammessi": [
+   "Faggio",
+   "Frassino",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 10,
+  "misura_tipica_cm": {
+   "larghezza": 60,
+   "altezza": 88,
+   "profondita": 42
+  },
+  "descrizione": "Carrello su ruote con piano di lavoro e ripiani."
+ },
+ {
+  "id": "P052",
+  "nome": "Panchina da giardino",
+  "categoria": "Giardino",
+  "misure_min_cm": {
+   "larghezza": 100,
+   "altezza": 75,
+   "profondita": 50
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 90,
+   "profondita": 65
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 20,
+  "misura_tipica_cm": {
+   "larghezza": 150,
+   "altezza": 82,
+   "profondita": 58
+  },
+  "descrizione": "Panchina con schienale per esterno."
+ },
+ {
+  "id": "P053",
+  "nome": "Casetta attrezzi",
+  "categoria": "Giardino",
+  "misure_min_cm": {
+   "larghezza": 150,
+   "altezza": 200,
+   "profondita": 100
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 250,
+   "profondita": 250
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Abete"
+  ],
+  "tempi_consegna_giorni": 50,
+  "misura_tipica_cm": {
+   "larghezza": 225,
+   "altezza": 225,
+   "profondita": 175
+  },
+  "descrizione": "Casetta da giardino per attrezzi, montaggio incluso nel prezzo del montaggio."
+ },
+ {
+  "id": "P054",
+  "nome": "Sdraio",
+  "categoria": "Giardino",
+  "misure_min_cm": {
+   "larghezza": 55,
+   "altezza": 35,
+   "profondita": 150
+  },
+  "misure_max_cm": {
+   "larghezza": 70,
+   "altezza": 90,
+   "profondita": 190
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Rovere",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 15,
+  "misura_tipica_cm": {
+   "larghezza": 62,
+   "altezza": 62,
+   "profondita": 170
+  },
+  "descrizione": "Lettino prendisole con schienale regolabile."
+ },
+ {
+  "id": "P055",
+  "nome": "Grigliato frangivista",
+  "categoria": "Giardino",
+  "misure_min_cm": {
+   "larghezza": 90,
+   "altezza": 150,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 200,
+   "profondita": 30
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Abete",
+   "Pino"
+  ],
+  "tempi_consegna_giorni": 10,
+  "misura_tipica_cm": {
+   "larghezza": 145,
+   "altezza": 175,
+   "profondita": 30
+  },
+  "descrizione": "Pannello a griglia per schermare la vista o sostenere rampicanti."
+ },
+ {
+  "id": "P056",
+  "nome": "Bancone bar",
+  "categoria": "Negozi",
+  "misure_min_cm": {
+   "larghezza": 150,
+   "altezza": 105,
+   "profondita": 50
+  },
+  "misure_max_cm": {
+   "larghezza": 300,
+   "altezza": 115,
+   "profondita": 80
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Castagno"
+  ],
+  "tempi_consegna_giorni": 40,
+  "misura_tipica_cm": {
+   "larghezza": 225,
+   "altezza": 110,
+   "profondita": 65
+  },
+  "descrizione": "Bancone per bar e locali, con piano di servizio."
+ },
+ {
+  "id": "P057",
+  "nome": "Espositore da negozio",
+  "categoria": "Negozi",
+  "misure_min_cm": {
+   "larghezza": 60,
+   "altezza": 120,
+   "profondita": 35
+  },
+  "misure_max_cm": {
+   "larghezza": 200,
+   "altezza": 220,
+   "profondita": 60
+  },
+  "legni_ammessi": [
+   "Abete",
+   "Faggio",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 25,
+  "misura_tipica_cm": {
+   "larghezza": 130,
+   "altezza": 170,
+   "profondita": 48
+  },
+  "descrizione": "Scaffale espositivo per negozi, con ripiani inclinabili."
+ },
+ {
+  "id": "P058",
+  "nome": "Tavolo da ristorante",
+  "categoria": "Negozi",
+  "misure_min_cm": {
+   "larghezza": 70,
+   "altezza": 75,
+   "profondita": 70
+  },
+  "misure_max_cm": {
+   "larghezza": 180,
+   "altezza": 78,
+   "profondita": 100
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Castagno",
+   "Frassino"
+  ],
+  "tempi_consegna_giorni": 20,
+  "misura_tipica_cm": {
+   "larghezza": 125,
+   "altezza": 76,
+   "profondita": 85
+  },
+  "descrizione": "Tavolo robusto per locali, piano facile da pulire."
+ },
+ {
+  "id": "P059",
+  "nome": "Scala libreria",
+  "categoria": "Studio",
+  "misure_min_cm": {
+   "larghezza": 40,
+   "altezza": 150,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 60,
+   "altezza": 250,
+   "profondita": 70
+  },
+  "legni_ammessi": [
+   "Faggio",
+   "Rovere"
+  ],
+  "tempi_consegna_giorni": 15,
+  "misura_tipica_cm": {
+   "larghezza": 50,
+   "altezza": 200,
+   "profondita": 55
+  },
+  "descrizione": "Scala in legno per raggiungere i ripiani alti della libreria."
+ },
+ {
+  "id": "P060",
+  "nome": "Libreria girevole",
+  "categoria": "Studio",
+  "misure_min_cm": {
+   "larghezza": 40,
+   "altezza": 100,
+   "profondita": 40
+  },
+  "misure_max_cm": {
+   "larghezza": 60,
+   "altezza": 180,
+   "profondita": 60
+  },
+  "legni_ammessi": [
+   "Rovere",
+   "Noce",
+   "Ciliegio"
+  ],
+  "tempi_consegna_giorni": 22,
+  "misura_tipica_cm": {
+   "larghezza": 50,
+   "altezza": 140,
+   "profondita": 50
+  },
+  "descrizione": "Libreria a colonna che ruota su sé stessa."
+ },
+ {
+  "id": "P061",
+  "nome": "Portalegna",
+  "categoria": "Soggiorno",
+  "misure_min_cm": {
+   "larghezza": 40,
+   "altezza": 50,
+   "profondita": 30
+  },
+  "misure_max_cm": {
+   "larghezza": 120,
+   "altezza": 120,
+   "profondita": 50
+  },
+  "legni_ammessi": [
+   "Castagno",
+   "Rovere",
+   "Abete"
+  ],
+  "tempi_consegna_giorni": 12,
+  "misura_tipica_cm": {
+   "larghezza": 70,
+   "altezza": 80,
+   "profondita": 40
+  },
+  "descrizione": "Mobile aperto a vani per tenere la legna accanto al camino o alla stufa."
+ },
+ {
+  "id": "P062",
+  "nome": "Banco da lavoro",
+  "categoria": "Studio",
+  "misure_min_cm": {
+   "larghezza": 100,
+   "altezza": 85,
+   "profondita": 50
+  },
+  "misure_max_cm": {
+   "larghezza": 250,
+   "altezza": 95,
+   "profondita": 90
+  },
+  "legni_ammessi": [
+   "Faggio",
+   "Frassino",
+   "Abete"
+  ],
+  "tempi_consegna_giorni": 24,
+  "misura_tipica_cm": {
+   "larghezza": 160,
+   "altezza": 90,
+   "profondita": 70
+  },
+  "descrizione": "Banco robusto per bricolage e hobby, con ripiano inferiore."
+ }
+]
